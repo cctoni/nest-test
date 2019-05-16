@@ -1,0 +1,32 @@
+# /src/graphql/todos.graphql
+query helloWorld {
+  helloWorld
+}
+
+query allVotes {
+  allVotes {
+    id
+    vote
+  }
+}
+
+query allUsers {
+  allUsers {
+    id
+    firstName
+  }
+}
+
+mutation registerUser(
+  $firstName: String!
+  $password: String!
+  $email: String!
+) {
+  register(
+    newUserInput: { firstName: $firstName, password: $password, email: $email }
+  ) {
+    id
+    firstName
+    email
+  }
+}

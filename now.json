@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "alias": ["nest-server"],
+    "env": {
+        "NODE_ENV": "production",
+        "PORT": "80"
+    },
+    "builds": [{
+        "src": "dist/main.js",
+        "use": "@now/node@canary",
+        "config": {
+            "maxLambdaSize": "50mb"
+        }
+    }],
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "dist/main.js"
+    }]
+}
